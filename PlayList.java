@@ -236,13 +236,13 @@ class PlayList {
         {
             return -1;
         }
-        int min = getTrack(start).getDuration(); //set the minimum value to be the duration of the first track in the playlist
+        int min = this.tracks[start].getDuration(); //set the minimum value to be the duration of the first track in the playlist
         int index = start;
         for (int i = start+1; i<size; i++)
         {
-            if (getTrack(i).getDuration() < min)
+            if (this.tracks[i].getDuration() < min)
             {
-                min = getTrack(i).getDuration();
+                min = this.tracks[i].getDuration();
                 index = i;
             }
         }
