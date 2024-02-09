@@ -263,18 +263,27 @@ class PlayList {
         // Uses the selection sort algorithm,  
         // calling the minIndex method in each iteration.
         //// replace this statement with your code
-        String title = titleOfShortestTrack();
-        int index = indexOf(title);
-        Track track_to_add = getTrack(index);
-        remove(title);
-        add(0,track_to_add); //first remove and add the min track at the beginig od the playlist
-        for (int i =1; i<size; i++)
+        //String title = titleOfShortestTrack();
+        //int index = indexOf(title);
+        //Track track_to_add = getTrack(index);
+        //remove(title);
+        //add(0,track_to_add); //first remove and add the min track at the beginig od the playlist
+       //for (int i =1; i<size; i++)
+        //{
+            //int index_i = minIndex(i);
+            //track_to_add = getTrack(index_i);
+            //remove(index_i);
+            //add(i,track_to_add);
+        //}
+        Track tempTrack = new Track("", "", 0);
+        int minInd;
+        for (int i = 0 ; i < this.size-1 ; i++)
         {
-            int index_i = minIndex(i);
-            track_to_add = getTrack(index_i);
-            remove(index_i);
-            add(i,track_to_add);
-        }
+            minInd = minIndex(i);
+            tempTrack=this.tracks[minInd];
+            this.tracks[minInd] = this.tracks[i];
+            this.tracks[i] = tempTrack;
 
-    }
+        
+        }}
 }
